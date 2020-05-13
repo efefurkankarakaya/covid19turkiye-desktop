@@ -1,0 +1,25 @@
+{
+  "name": "covid19turkiye-desktop",
+  "version": "1.0.0",
+  "description": "Desktop app for CoViD-19 Turkey Statistics",
+  "main": "index.js",
+  "dependencies": {
+    "electron": "^8.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/efefurkankarakaya/covid19turkiye-desktop"
+  },
+  "keywords": [
+    "covid19",
+    "turkiye",
+    "turkey"
+  ],
+  "author": "Efe Furkan KARAKAYA",
+  "license": "MIT"
+}
