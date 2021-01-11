@@ -29,25 +29,24 @@ function data_parser(res, type, daily=false){
     let content_array = [];
 
     if (daily){
-        let temp = 0;
+        let temp = null;
         for (date in data) {
             const shredded = date.split("/");
-            if ((Number(shredded[0]) == 3 && Number(shredded[1]) >= 9) || shredded[0] >= 4) {
+            if (temp != null) {
                 content_array.push(Math.abs(data[date] - temp));
                 const rebuilt = `${shredded[1]}/${shredded[0]}/20${shredded[2]}`
                 dates_array.push(rebuilt);
-                temp = data[date];
             }
+            temp = data[date];
         }
     }
     else {
         for (date in data) {
             const shredded = date.split("/");
-            if ((Number(shredded[0]) == 3 && Number(shredded[1]) >= 9) || shredded[0] >= 4) {
-                const rebuilt = `${shredded[1]}/${shredded[0]}/20${shredded[2]}`
-                dates_array.push(rebuilt);
-                content_array.push(data[date]);
-            }
+            console.log(shredded);
+            const rebuilt = `${shredded[1]}/${shredded[0]}/20${shredded[2]}`
+            dates_array.push(rebuilt);
+            content_array.push(data[date]);
         }
     }
     return [dates_array, content_array];
